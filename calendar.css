@@ -1,0 +1,32 @@
+.calTable
+{
+
+	background-color:#AAAAAA;
+}
+.calTable td
+{
+	font-family:Tahoma;
+	font-size:10px;
+	background-color:#EEEEEE;
+}
+.calCell
+{
+	text-align:center;
+	height:15px;
+}
+
+.calCell A
+{
+	 display:block;
+	 height:100%;
+	 vertical-align:middle;
+	 padding:5px;
+	 text-decoration:none;
+	 font-weight:bold;
+	 color:#000000;
+}
+
+.calCell A:hover
+{
+	background-color:#FAFAFA;
+}

@@ -155,13 +155,13 @@ if ($_SESSION['user']==1){
 		$tahograf_desc1=$_POST['an_tahograf_desc'].'-'.$_POST['luna_tahograf_desc'].'-'.$_POST['zi_tahograf_desc'];
 		$legitimatie_exp1=$_POST['an_legitimatie_exp'].'-'.$_POST['luna_legitimatie_exp'].'-'.$_POST['zi_legitimatie_exp'];
 		
-		$id_sofer1=$_POST['id_sofer'];
-		$ci_serie1=$_POST['ci_serie'];
-		$ci_numar1=$_POST['ci_numar'];
-		$permis_serie1=$_POST['permis_serie'];
-		$permis_categorii1=$_POST['permis_categorii'];
-		$atestat_categorii1=$_POST['atestat_categorii'];
-		$legitimatie_numar1=$_POST['legitimatie_numar'];
+		$id_sofer1=$_GET['indice'];
+		$ci_serie1=strtoupper($_POST['ci_serie']);
+		$ci_numar1=strtoupper($_POST['ci_numar']);
+		$permis_serie1=strtoupper($_POST['permis_serie']);
+		$permis_categorii1=strtoupper($_POST['permis_categorii']);
+		$atestat_categorii1=strtoupper($_POST['atestat_categorii']);
+		$legitimatie_numar1=strtoupper($_POST['legitimatie_numar']);
 
 		if ($ci_exp1=="--"){$ci_exp1="2036-7-22";};
 		if ($permis_exp1=="--"){$permis_exp1="2036-7-22";};
@@ -471,9 +471,9 @@ else
 				<input type="text" size="10" placeholder="numar" maxlength="15" name="legitimatie_numar" id="legitimatie_numar" value="<?php echo $legitimatie_numar; ?>"/>
 			</div>
 			<div style="float:right; margin-right:70px">
-				<input type="hidden" size="2" maxlength="2" name="zi_legitimatie_exp" id="zi_legitimatie_exp" value="<?php echo date("d" ,$d2); ?>" />
-				<input type="hidden" size="2" maxlength="2" name="luna_legitimatie_exp" id="luna_legitimatie_exp" value="<?php echo date("m" ,$d2); ?>" />
-				<input type="hidden" size="4" maxlength="4" name="an_legitimatie_exp" id="an_legitimatie_exp" value="<?php echo date("Y" ,$d2); ?>" />
+				<input type="hidden" size="2" maxlength="2" name="zi_legitimatie_exp" id="zi_legitimatie_exp" value="<?php echo date("d" ,$d8); ?>" />
+				<input type="hidden" size="2" maxlength="2" name="luna_legitimatie_exp" id="luna_legitimatie_exp" value="<?php echo date("m" ,$d8); ?>" />
+				<input type="hidden" size="4" maxlength="4" name="an_legitimatie_exp" id="an_legitimatie_exp" value="<?php echo date("Y" ,$d8); ?>" />
 				<input type="text" size="10" maxlength="10" name="legitimatie_exp" id="legitimatie_exp" disabled value="<?php echo $legitimatie_exp; ?>"/>
 
 				<a onclick="ShowCal('legitimatie_exp', 'zi_legitimatie_exp', 'luna_legitimatie_exp', 'an_legitimatie_exp', 'calend_legitimatie_exp'); return false;">
@@ -511,7 +511,9 @@ if ($_SESSION['user']==1){
 	
 	// mysql_close($conexiune);
 
+	include "perioade_notificari.php";
 	include "conexiune.php";
+
 	$sql=mysql_query("SELECT * FROM avize_soferi WHERE id_sofer='$indice'");
 	echo '<table border=1 cellpadding="5" cellspacing="0">';
 	echo "<tr>
@@ -535,8 +537,9 @@ if ($_SESSION['user']==1){
 	echo '<td id="field_0_'.$i.'" align="center" ';
 	echo ' value="'.$nume.'" >'.$nume.'</td>';
 
+
 	echo '<td align="center">';
-	if (($d1-$dataazi_sec)<=864000)
+	if (($d1-$dataazi_sec) <= $notificare_ci_exp)
 	{
 		$expira=1;
 		echo "<font color='#ff0000'>";
@@ -546,10 +549,92 @@ if ($_SESSION['user']==1){
 	echo '</td>';
 
 
+
+	echo '<td align="center">';
+	if (($d2-$dataazi_sec) <= $notificare_permis_exp)
+	{
+		$expira=1;
+		echo "<font color='#ff0000'>";
+	}	
+	echo $permis_exp;
+	if ($expira==1){ echo '</font>'; }	
+	echo '</td>';
+
+
+
+	echo '<td align="center">';
+	if (($d3-$dataazi_sec) <= $notificare_psihologic_exp)
+	{
+		$expira=1;
+		echo "<font color='#ff0000'>";
+	}	
+	echo $psihologic_exp;
+	if ($expira==1){ echo '</font>'; }	
+	echo '</td>';
+
+
+
+	echo '<td align="center">';
+	if (($d4-$dataazi_sec) <= $notificare_medicale_exp)
+	{
+		$expira=1;
+		echo "<font color='#ff0000'>";
+	}	
+	echo $medicale_exp;
+	if ($expira==1){ echo '</font>'; }	
+	echo '</td>';
+
+
+
+	echo '<td align="center">';
+	if (($d5-$dataazi_sec) <= $notificare_atestat_exp)
+	{
+		$expira=1;
+		echo "<font color='#ff0000'>";
+	}	
+	echo $atestat_exp;
+	if ($expira==1){ echo '</font>'; }	
+	echo '</td>';
+
+
+
+	echo '<td align="center">';
+	if (($d6-$dataazi_sec) <= $notificare_tahograf_exp)
+	{
+		$expira=1;
+		echo "<font color='#ff0000'>";
+	}	
+	echo $tahograf_exp;
+	if ($expira==1){ echo '</font>'; }	
+	echo '</td>';
+
+
+
+	echo '<td align="center">';
+	if (($d7-$dataazi_sec) <= $notificare_tahograf_desc)
+	{
+		$expira=1;
+		echo "<font color='#ff0000'>";
+	}	
+	echo $tahograf_desc;
+	if ($expira==1){ echo '</font>'; }	
+	echo '</td>';
+
+
+
+	echo '<td align="center">';
+	if (($d8-$dataazi_sec) <= $notificare_legitimatie_exp)
+	{
+		$expira=1;
+		echo "<font color='#ff0000'>";
+	}	
+	echo $legitimatie_exp;
+	if ($expira==1){ echo '</font>'; }	
+	echo '</td>';
+
 	echo '
 	';
-	/*
-	}*/
+
 	echo "</table>";
 	echo "<br><br>";
 	

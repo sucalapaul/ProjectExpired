@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -244,15 +244,15 @@ if ($_SESSION['user']==1){
 <form action="" method="post" name="Form1" id="Form1">
 <input type="hidden" id="OPERATIE" name="OPERATIE" value="">
 <input type="hidden" id="indice_vechi" name="indice_vechi" value="">
-<input type="hidden" id="id_pi_vechi" name="id_pi_vechi" value="<? echo $id_pi; ?>">
-<input type="hidden" id="id_pf_vechi" name="id_pf_vechi" value="<? echo $id_pf; ?>">
+<input type="hidden" id="id_pi_vechi" name="id_pi_vechi" value="<?php echo $id_pi; ?>">
+<input type="hidden" id="id_pf_vechi" name="id_pf_vechi" value="<?php echo $id_pf; ?>">
 <input type="hidden" id="tip_c_vechi" name="tip_c_vechi" value="">
-<input type="hidden" id="nr_cursa_vechi" name="nr_cursa_vechi" value="<? echo $nr_cursa;?>">
+<input type="hidden" id="nr_cursa_vechi" name="nr_cursa_vechi" value="<?php echo $nr_cursa;?>">
 <input type="hidden" id="indice" name="indice" value="">
 <table>
          <tr>
                 <td ><strong>Punct initial:</strong>
-<?
+<?php
 if ($_SESSION['user']==1){
 
 		require "array_statii.php";$nr_statii=$i-1;
@@ -267,13 +267,13 @@ if ($_SESSION['user']==1){
 				echo "</select>";
 }
 ?>
-               <input type="hidden" size="3" maxlength="3" name="id_pi" id="id_pi" value="<? echo $id_pi; ?>" />  
+               <input type="hidden" size="3" maxlength="3" name="id_pi" id="id_pi" value="<?php echo $id_pi; ?>" />  
 		 </td>	  
         </tr>
 
         <tr>
                 <td height=""><strong>Punct final:&nbsp;&nbsp;</strong> 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 		require "array_statii.php";$nr_statii=$i-1;
@@ -288,14 +288,14 @@ if ($_SESSION['user']==1){
 				echo "</select>";
 }
 ?>
-               <input type="hidden" size="3" maxlength="3" name="id_pf" id="id_pf" value="<? echo $id_pf; ?>"/>  
+               <input type="hidden" size="3" maxlength="3" name="id_pf" id="id_pf" value="<?php echo $id_pf; ?>"/>  
 		  </td>
         </tr>
 		<tr>
 		  <td><strong>Tip cursa:</strong>
-				<input type="hidden" name="tip_c"  size="1"maxlength="1" value="<? echo $tip_c; ?>"/>
+				<input type="hidden" name="tip_c"  size="1"maxlength="1" value="<?php echo $tip_c; ?>"/>
                         <select name='slct_cat' id='slct_cat' onchange='slct_ctg();'>
-                                 <option selected value='<? echo $tip_c; ?>'><? if ($tip_c=='E'){echo 'Internationala';}; if ($tip_c=='I'){echo 'Interna';}; ?></option>
+                                 <option selected value='<?php echo $tip_c; ?>'><?php if ($tip_c=='E'){echo 'Internationala';}; if ($tip_c=='I'){echo 'Interna';}; ?></option>
                                  <option value='I'>Interna</option> 
                                  <option value='E'>Internationala</option>
                         </select>
@@ -303,7 +303,7 @@ if ($_SESSION['user']==1){
 		</tr> 
 		<tr>
                 <td height=""><strong>Numar cursa:</strong>
-                <input type="text" size="2" name="nr_cursa" maxlength="2" value="<? echo $nr_cursa;?>"></td>
+                <input type="text" size="2" name="nr_cursa" maxlength="2" value="<?php echo $nr_cursa;?>"></td>
         </tr> 
 </table>
 <table>
@@ -318,7 +318,7 @@ if ($_SESSION['user']==1){
 </table>
 </form>
 <p>
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";

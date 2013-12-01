@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <style type="text/css">
@@ -11,7 +11,7 @@ session_start();
 <br> 
 &nbsp;
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";
@@ -72,10 +72,10 @@ if ($_SESSION['user']==1){
 </style>
 <br />
 &nbsp;
-<strong><span class="style6">Curse efectuate de soferul</span></strong><font size="+2"><strong> <? echo $nume;?> </strong></font><strong><span class="style6">in perioada : </span></strong><font size="+2"><strong> <? echo $perioada; ?></strong></font>
+<strong><span class="style6">Curse efectuate de soferul</span></strong><font size="+2"><strong> <?php echo $nume;?> </strong></font><strong><span class="style6">in perioada : </span></strong><font size="+2"><strong> <?php echo $perioada; ?></strong></font>
  <center>
  
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";

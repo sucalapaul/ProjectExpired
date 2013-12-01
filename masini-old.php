@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -328,7 +328,7 @@ if ($_SESSION['user']==1)
 
 <form action="" method="post" name="Form1" id="Form1">
 <input type="hidden" id="OPERATIE" name="OPERATIE" value=""  />
-<input type="hidden" id="nr_inmatric_vechi" name="nr_inmatric_vechi" value="<? echo $nr_inmatric; ?>"/>
+<input type="hidden" id="nr_inmatric_vechi" name="nr_inmatric_vechi" value="<?php echo $nr_inmatric; ?>"/>
 <input type="hidden" id="categoria_vechi" name="categoria_vechi" value=""/>
 <input type="hidden" id="id_tip_auto_vechi" name="id_tip_auto_vechi" value=""/>
 <input type="hidden" id="tarif_vechi" name="tarif_vechi" value=""/>
@@ -351,9 +351,9 @@ sortare();
 <center>
 <table border="1" cellpadding="0">
         <tr><td><table cellpadding="0"><tr><td height="35"><strong>Nr.inmatriculare </strong>&nbsp;&nbsp;&nbsp;
-                          <input type="text" size="9" maxlength="9" name="nr_inmatric" id="nr_inmatric" value='<? echo $nr_inmatric; ?>'/>&nbsp;
+                          <input type="text" size="9" maxlength="9" name="nr_inmatric" id="nr_inmatric" value='<?php echo $nr_inmatric; ?>'/>&nbsp;
                                  
-                                 <?
+                                 <?php
                                  echo '<strong>Cat: '.$categoria.'&nbsp;&nbsp;</strong> ';
                                  if ($categoria=='marfa')
 									echo '<a href="masini.php?indice=0&catg=persoane"><font size="-1">-schimba-</font></a>';
@@ -361,9 +361,9 @@ sortare();
 									echo '<a href="masini.php?indice=0&catg=marfa"><font size="-1">-schimba-</font></a>';
                                  ?>
                                  
-                    <input type="hidden" size="10" maxlength="10" name="categoria" id="categoria" value="<? echo $categoria; ?>" />
+                    <input type="hidden" size="10" maxlength="10" name="categoria" id="categoria" value="<?php echo $categoria; ?>" />
                         <!--select name='slct_cat' id='slct_cat' onchange='slct_ctg();'>
-                                 <option selected value= <? echo $categoria.'>'.$categoria; ?> </option>                                 
+                                 <option selected value= <?php echo $categoria.'>'.$categoria; ?> </option>                                 
                                  <?/*
 									if ($categoria=='marfa')
 										echo "<option value='persoane'>persoane</option>";
@@ -374,20 +374,20 @@ sortare();
                         </select-->
 						
 						<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Firma:</strong>
-                    <input type="hidden" size="10" maxlength="10" name="firma" id="firma" value="<? echo $firma; ?>" />
+                    <input type="hidden" size="10" maxlength="10" name="firma" id="firma" value="<?php echo $firma; ?>" />
                     <select name='slct_firm' id='slct_firm' onchange='slct_firma();'>
-                      <option selected value= <? echo $firma.'>'.$firma; ?> </option>
+                      <option selected value= <?php echo $firma.'>'.$firma; ?> </option>
                       <option value='CentoTrans'>CentoTrans</option>
                       <option value='CentoConstruct'>CentoConstruct</option>
                     </select>
                     <strong>&nbsp;&nbsp;&nbsp;An fabricatie: </strong>&nbsp;
-                          <input type="text" size="4" maxlength="4" name="an_fabr" id="an_fabr" value='<? echo $an_fabr; ?>'/>&nbsp;
+                          <input type="text" size="4" maxlength="4" name="an_fabr" id="an_fabr" value='<?php echo $an_fabr; ?>'/>&nbsp;
 						  
         </td></tr></table></td></tr>
         <tr><td align="left"><table cellpadding="0" >
          <tr> <td height="35" width="252" align="left"> <strong>Tipul:</strong>
 
- <?
+ <?php
 if ($_SESSION['user']==1){
 
 include "verifica_revizii.php";
@@ -405,25 +405,25 @@ for($i=1;$i<=$id_tip_auto;$i++){
 }
 ?>
 
-<input type="hidden" id="id_tip_auto" name="id_tip_auto" value="<? echo $id_auto; ?>"/>
+<input type="hidden" id="id_tip_auto" name="id_tip_auto" value="<?php echo $id_auto; ?>"/>
         </td>
                  <td>
                   <strong>Tarif:<em>(pret de facturare) </em></strong>&nbsp;
-                   <input type="text" size="10" maxlength="10" name="tarif" id="tarif" value="<? echo $tarif;?>" />
+                   <input type="text" size="10" maxlength="10" name="tarif" id="tarif" value="<?php echo $tarif;?>" />
                    <strong>Valoare diurna:<em>(val.plata sof/km)</em> </strong>&nbsp;
-                   <input type="text" size="10" maxlength="10" name="val_diurna" id="val_diurna" value="<? echo $val_diurna; ?>" />
+                   <input type="text" size="10" maxlength="10" name="val_diurna" id="val_diurna" value="<?php echo $val_diurna; ?>" />
     </td></tr></table></td></tr>
         <tr><td>
                 <table><tr><td width="286" height="35" align="left"><strong>Kilometraj la inregistrare:</strong>
-                  <input type="text" size="8" maxlength="8" name="klmtj_inreg" id="klmtj_inreg" value="<? echo $klmtj_inreg; ?>" />
+                  <input type="text" size="8" maxlength="8" name="klmtj_inreg" id="klmtj_inreg" value="<?php echo $klmtj_inreg; ?>" />
                   <em><strong> km</strong></em></td>
                 <td width="487" align="left"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Consumul specific masinii:</strong>
-                      <input type="text" size="5" maxlength="5" name="cons_spec" id="cons_spec" value="<? echo $cons_spec; ?>" />
+                      <input type="text" size="5" maxlength="5" name="cons_spec" id="cons_spec" value="<?php echo $cons_spec; ?>" />
                  <em><strong>L/100 Km </strong></em> 
 				  &nbsp;&nbsp;&nbsp; <strong>Clasificare</strong>
 				  <input type="hidden" id="clasi" name="clasi" value="">
                     <select name='slct_cls' id='slct_cls' onchange='slct_clas();'>
-                      <option selected value= <? echo $clasi.'>'.$clasi; ?> </option>
+                      <option selected value= <?php echo $clasi.'>'.$clasi; ?> </option>
                       <option value='1 stea'>1 stea</option>
                       <option value='2 stele'>2 stele</option>
                       <option value='3 stele'>3 stele</option>
@@ -449,7 +449,7 @@ for($i=1;$i<=$id_tip_auto;$i++){
         </tr>
 </table>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 include "conexiune.php";
@@ -460,7 +460,7 @@ while ($row=mysql_fetch_row($sql)) { $randuri=$randuri+1; }
 }
 ?>
 <input type="hidden" id="sortez" name="sortez" />
- <?
+ <?php
 if ($_SESSION['user']==1){
 	
 include "conexiune.php";

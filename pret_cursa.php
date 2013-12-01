@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -210,16 +210,16 @@ if ($_SESSION['user']==1){
 <input type="hidden" id="dus_int_vechi" name="dus_int_vechi" value="">
 <input type="hidden" id="var" name="var" value="">
 <input type="hidden" id="var_vechi" name="var_vechi" value="">
-<input type="hidden" id="indice" name="indice" value="<? echo $indice; ?>">
+<input type="hidden" id="indice" name="indice" value="<?php echo $indice; ?>">
 
 <table>
 		<tr>
              <td width="140" align="left"><strong>Tara:</strong> 
-             <input type="hidden" name="tara"  size="1"maxlength="1" value="<? echo $tara; ?>"/>
+             <input type="hidden" name="tara"  size="1"maxlength="1" value="<?php echo $tara; ?>"/>
 			 </td>
 			 <td width="241" align="left">
 				<select name='slct_tar' id='slct_tar' onchange='slct_tara();'>
-						 <option selected value='<? echo $tara; ?>'><? if ($tara=='A'){echo 'Anglia';}; if ($tara=='S'){echo 'Spania';}; if ($tara=='I'){echo 'Italia';}; ?></option>
+						 <option selected value='<?php echo $tara; ?>'><?php if ($tara=='A'){echo 'Anglia';}; if ($tara=='S'){echo 'Spania';}; if ($tara=='I'){echo 'Italia';}; ?></option>
 						 <option value='A'>Anglia</option> 
 						 <option value='S'>Spania</option>
 						 <option value='I'>Italia</option>
@@ -229,23 +229,23 @@ if ($_SESSION['user']==1){
         </tr>
          <tr>
                 <td width="140" align="left"><strong>Dus (euro):</strong> </td>
-           <td width="241" align="left"><input type="text"  size="8" name="dus_eur" maxlength="8" value="<? echo $dus_eur; ?>"></td>
+           <td width="241" align="left"><input type="text"  size="8" name="dus_eur" maxlength="8" value="<?php echo $dus_eur; ?>"></td>
         </tr>
 		<tr>
                 <td width="140" align="left"><strong>Intors client nou:</strong> </td>
-           <td width="241" align="left"><input type="text"  size="8" name="intors_eur_n" maxlength="8" value="<? echo $intors_eur_n; ?>" ></td>
+           <td width="241" align="left"><input type="text"  size="8" name="intors_eur_n" maxlength="8" value="<?php echo $intors_eur_n; ?>" ></td>
         </tr>
 		<tr>
                 <td width="140" align="left"><strong>Intors client vechi:</strong> </td>
-           <td width="241" align="left"><input type="text"  size="8" name="intors_eur_v" maxlength="8" value="<? echo $intors_eur_v; ?>" ></td>
+           <td width="241" align="left"><input type="text"  size="8" name="intors_eur_v" maxlength="8" value="<?php echo $intors_eur_v; ?>" ></td>
         </tr>
          <tr>
                 <td width="140" align="left"><strong>Dus/intors (euro):</strong> </td>
-           <td width="241" align="left"><input type="text"  size="8" name="dus_int" maxlength="8" value="<? echo $dus_int; ?>"></td>
+           <td width="241" align="left"><input type="text"  size="8" name="dus_int" maxlength="8" value="<?php echo $dus_int; ?>"></td>
         </tr>
 		  <tr>
                 <td width="140" align="left"><strong>Varianta pret (euro):</strong> </td>
-           <td width="241" align="left"><input type="text"  size="8" name="var" maxlength="8" value="<? echo $var; ?>"></td>
+           <td width="241" align="left"><input type="text"  size="8" name="var" maxlength="8" value="<?php echo $var; ?>"></td>
         </tr>
 </table>
 <table>
@@ -261,7 +261,7 @@ if ($_SESSION['user']==1){
 </form>
 <p>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";

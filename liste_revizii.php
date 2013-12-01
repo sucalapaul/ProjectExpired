@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <%@LANGUAGE="JAVASCRIPT" CODEPAGE="1252"%>
@@ -20,17 +20,17 @@ function nuare(camy){
 </head>
 <body>
 
- <?
+ <?php
 $azi=date("Y-m-d"); 
 require "dataazi.php";
 
 ?>
 <div align="center">
   <h3><span class="style5"><strong>Lista cu data expirarii revizii  </strong></span><br>
-   <h3><span class="style5"><strong>azi</strong></span><font size="+1"><strong> <? echo date("d/m/Y",$dataazi_sec).'<br />'; ?></strong><br>
+   <h3><span class="style5"><strong>azi</strong></span><font size="+1"><strong> <?php echo date("d/m/Y",$dataazi_sec).'<br />'; ?></strong><br>
   <br />
   
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";

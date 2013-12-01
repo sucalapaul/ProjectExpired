@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <html>
@@ -64,7 +64,7 @@ function trimite(){
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em><strong><span class="style7"> - soferul</span>:</strong></em>&nbsp;&nbsp;&nbsp;
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	require "array_soferi.php";$nr_soferi=$i-1;

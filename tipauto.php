@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -117,7 +117,7 @@ if ($_SESSION['user']==1){
 echo '<font color="#ff0000" size="+2">Nu aveti acces la aceasta pagina!!!</font>';
 }
 ?>
-<? if ($_SESSION['user']==1){
+<?php if ($_SESSION['user']==1){
 echo '
 	<a href="index.php" class="style2 style3"><font size="+1" color="#000000">&lt;&nbsp;Inapoi</font></a> 
 	<form action="" method="post" name="Form1" id="Form1">
@@ -147,7 +147,7 @@ echo '
 
 <p>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";

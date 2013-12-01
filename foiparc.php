@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -703,19 +703,19 @@ if ($_SESSION['user']==1){
 
 <input type="hidden" id="OPERATIE" name="OPERATIE" value="">
 
-<input type="hidden" id="id_masina" name="id_masina" value="<? echo $id_masina; ?>">
-<input type="hidden" id="id_sofer_1" name="id_sofer_1" value="<? echo $id_sofer_1; ?>">
-<input type="hidden" id="id_sofer_2" name="id_sofer_2" value="<? echo $id_sofer_2; ?>">
-<input type="hidden" id="id_sofer_4" name="id_sofer_4" value="<? echo $id_sofer_4; ?>">
+<input type="hidden" id="id_masina" name="id_masina" value="<?php echo $id_masina; ?>">
+<input type="hidden" id="id_sofer_1" name="id_sofer_1" value="<?php echo $id_sofer_1; ?>">
+<input type="hidden" id="id_sofer_2" name="id_sofer_2" value="<?php echo $id_sofer_2; ?>">
+<input type="hidden" id="id_sofer_4" name="id_sofer_4" value="<?php echo $id_sofer_4; ?>">
 <input type="hidden" id="" name="" value="">
 <input type="hidden" id="nume" name="nume" value="">
 <center>
 <table width="1100" border="1" cellpadding="0">
-        <tr><td> <input type="hidden" id="id_sofer_3" name="id_sofer_3" value="<? echo $id_sofer_3; ?>" />
+        <tr><td> <input type="hidden" id="id_sofer_3" name="id_sofer_3" value="<?php echo $id_sofer_3; ?>" />
           <table cellpadding="0"><tr><td height="35"><strong>Nr. foaie parcurs: </strong>&nbsp;
-          <input type="text" size="10" maxlength="10" name="nrdoc" id="nrdoc" value="<? if ($nrdoc=='0'){echo '';} else {echo $nrdoc;}; ?>" />
+          <input type="text" size="10" maxlength="10" name="nrdoc" id="nrdoc" value="<?php if ($nrdoc=='0'){echo '';} else {echo $nrdoc;}; ?>" />
 &nbsp;&nbsp;&nbsp; <strong>Nr.de inmatriculare:</strong>
-<?
+<?php
 if ($_SESSION['user']==1){
 
                    require "array_masini.php";$nr_masini=$i-1;
@@ -733,19 +733,19 @@ if ($_SESSION['user']==1){
 }
 ?>
 &nbsp; <strong>Data emiterii: </strong>
-                  <input type="hidden" size="2" maxlength="2" name="zi_e" id="zi_e" value="<? echo $zi_e; ?>"/>
+                  <input type="hidden" size="2" maxlength="2" name="zi_e" id="zi_e" value="<?php echo $zi_e; ?>"/>
 
-                  <input type="hidden" size="2" maxlength="2" name="luna_e" id="luna_e" value="<? echo $luna_e; ?>"/>
+                  <input type="hidden" size="2" maxlength="2" name="luna_e" id="luna_e" value="<?php echo $luna_e; ?>"/>
 
-                   <input type="hidden" size="4" maxlength="4" name="an_e" id="an_e" value="<? echo $an_e;?>" />
-                   <input type="text" size="10" maxlength="10" name="data_e" id="data_e" disabled value="<? echo $data_e; ?>"/>
+                   <input type="hidden" size="4" maxlength="4" name="an_e" id="an_e" value="<?php echo $an_e;?>" />
+                   <input type="text" size="10" maxlength="10" name="data_e" id="data_e" disabled value="<?php echo $data_e; ?>"/>
                    <a onclick="ShowCal('data_e', 'zi_e', 'luna_e', 'an_e', 'calend_em'); return false;"><img style="border:none" src="images/calendar.gif" /></a></td>
         </tr></table></td></tr>
 
   <tr><td> <div align="left"><span class="style11">D e t a l i i &nbsp;&nbsp;&nbsp;c u r s a:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="style12">Optional:</span>&nbsp;&nbsp;<strong>Traseul:</strong>
-        <input type="text" size="20" maxlength="20" name="traseul" id="traseul" value="<? echo $traseul; ?>" />
+        <input type="text" size="20" maxlength="20" name="traseul" id="traseul" value="<?php echo $traseul; ?>" />
         <span class="style12">Optional:</span><strong>&nbsp;&nbspDiurna sofer:</strong>
-                <input type="text" size="10" maxlength="10" name="diurna_sof" id="diurna_sof" value="<? echo $diurna_sof; ?>" />
+                <input type="text" size="10" maxlength="10" name="diurna_sof" id="diurna_sof" value="<?php echo $diurna_sof; ?>" />
         </div>
     <table><tr>
                 <td>
@@ -753,7 +753,7 @@ if ($_SESSION['user']==1){
 
                 <td height="35"><strong>Nume soferi:</strong></td>
         <td><strong>1:</strong>
-<?
+<?php
 if ($_SESSION['user']==1){
 
                    require "array_soferi.php";$nr_soferi=$i-1;
@@ -771,7 +771,7 @@ if ($_SESSION['user']==1){
 ?>
                    &nbsp;&nbsp;<strong>2:
                    </strong>
-<?
+<?php
 if ($_SESSION['user']==1){
 
                    require "array_soferi.php";$nr_soferi=$i-1;
@@ -789,7 +789,7 @@ if ($_SESSION['user']==1){
 ?>
 
                    &nbsp;&nbsp;<strong>3:</strong>
-<?
+<?php
 if ($_SESSION['user']==1){
 
                    require "array_soferi.php";$nr_soferi=$i-1;
@@ -807,7 +807,7 @@ if ($_SESSION['user']==1){
 ?>
 
                    &nbsp;&nbsp;<strong>4:</strong>
-<?
+<?php
 if ($_SESSION['user']==1){
 
                    require "array_soferi.php";$nr_soferi=$i-1;
@@ -826,15 +826,15 @@ if ($_SESSION['user']==1){
 </td></tr></table>
         <strong>Data sosire<em>:</em></strong>
 
-         <input type="text" size="10" maxlength="10" name="data_s" id="data_s" disabled value="<? echo $data_s; ?>"/>
+         <input type="text" size="10" maxlength="10" name="data_s" id="data_s" disabled value="<?php echo $data_s; ?>"/>
           <a onclick="ShowCal('data_s', 'ziua_s', 'luna_s', 'an_s', 'calend_s'); return false;"><img style="border:none" src="images/calendar.gif" /></a>
-          <input type="hidden" size="4" maxlength="4" name="an_s" id="an_s" value="<? echo $an_e; ?>" />
-          <input type="hidden" size="2" maxlength="2" name="luna_s" id="luna_s" value="<? echo $luna_s; ?>" />
-          <input type="hidden" size="2" maxlength="2" name="ziua_s" id="ziua_s" value="<? echo $ziua_s; ?>" />
+          <input type="hidden" size="4" maxlength="4" name="an_s" id="an_s" value="<?php echo $an_e; ?>" />
+          <input type="hidden" size="2" maxlength="2" name="luna_s" id="luna_s" value="<?php echo $luna_s; ?>" />
+          <input type="hidden" size="2" maxlength="2" name="ziua_s" id="ziua_s" value="<?php echo $ziua_s; ?>" />
 
 
                                                   <strong>ora:</strong>  </strong>&nbsp;
-          <select name='slct_oras' id='slct_oras' onchange='slct_ora_s();'><option selected value=<? echo "'".$ora_s."'>".$ora_s; ?></option>
+          <select name='slct_oras' id='slct_oras' onchange='slct_ora_s();'><option selected value=<?php echo "'".$ora_s."'>".$ora_s; ?></option>
                                  <option value='1'>1</option>
                                  <option value='2'>2</option>
                                  <option value='3'>3</option>
@@ -862,18 +862,18 @@ if ($_SESSION['user']==1){
 
                 <input type="hidden" size="2" maxlength="2" name="ora_s" id="ora_s" value="0" />
                                                                   <strong>kilometraj sos:</strong>
-          <input type="text" size="8" maxlength="8" name="klmtj_s" id="klmtj_s" value="<? echo $klmtj_s; ?>" />&nbsp;<em>
+          <input type="text" size="8" maxlength="8" name="klmtj_s" id="klmtj_s" value="<?php echo $klmtj_s; ?>" />&nbsp;<em>
 
 
     </em><strong>Data plecare</strong><em><strong>:</strong></em>
-        <input type="text" size="10" maxlength="10" name="data_p" id="data_p" disabled value="<? echo $data_p; ?>"/>
+        <input type="text" size="10" maxlength="10" name="data_p" id="data_p" disabled value="<?php echo $data_p; ?>"/>
         <a onclick="ShowCal('data_p', 'ziua_p', 'luna_p', 'an_p', 'calend_p'); return false;"><img style="border:none" src="images/calendar.gif" /></a>
-        <input type="hidden" size="2" maxlength="2" name="luna_p" id="luna_p" value="<? echo $luna_p; ?>" />&nbsp;
-        <input type="hidden" size="2" maxlength="2" name="ziua_p" id="ziua_p" value="<? echo $ziua_p; ?>"/>
-        <input type="hidden" size="2" maxlength="2" name="an_p" id="an_p" value="<? echo $an_e; ?>"/>
+        <input type="hidden" size="2" maxlength="2" name="luna_p" id="luna_p" value="<?php echo $luna_p; ?>" />&nbsp;
+        <input type="hidden" size="2" maxlength="2" name="ziua_p" id="ziua_p" value="<?php echo $ziua_p; ?>"/>
+        <input type="hidden" size="2" maxlength="2" name="an_p" id="an_p" value="<?php echo $an_e; ?>"/>
            <!--  <input type="text" size="2" maxlength="2" name="ziua_p" id="ziua_p" />  -->
                 <strong>&nbsp;ora:</strong>
-                 <select name='slct_orap' id='slct_orap' onchange='slct_ora_p();'><option selected value=<? echo "'".$ora_p."'>".$ora_p; ?></option>
+                 <select name='slct_orap' id='slct_orap' onchange='slct_ora_p();'><option selected value=<?php echo "'".$ora_p."'>".$ora_p; ?></option>
                                  <option value='1'>1</option>
                                  <option value='2'>2</option>
                                  <option value='3'>3</option>
@@ -901,7 +901,7 @@ if ($_SESSION['user']==1){
                  <input type="hidden" size="2" maxlength="2" name="ora_p" id="ora_p" value="0" />
           &nbsp;
                                                   <strong>kilometraj plec:
-                  <input type="text" size="8" maxlength="8" name="klmtj_p" id="klmtj_p" value="<? echo $klmtj_p; ?>" />
+                  <input type="text" size="8" maxlength="8" name="klmtj_p" id="klmtj_p" value="<?php echo $klmtj_p; ?>" />
                                   </strong>&nbsp;
 
         </td>
@@ -910,18 +910,18 @@ if ($_SESSION['user']==1){
           <tr>
                 <td>           <div align="left"><strong> <span class="style8">D e t a l i i &nbsp;&nbsp;&nbsp;a l i m e n t a r e:</span></strong>&nbsp;&nbsp;&nbsp;</strong></div></td></tr>
                   <td> <strong><span class="style9">1</span> Nr.doc.alim 1:</strong>&nbsp;
-                      <input type="text" size="10" maxlength="10" name="nrdoc_a1" id="nrdoc_a1" value="<? echo $nrdoc_a1; ?>" />&nbsp;
+                      <input type="text" size="10" maxlength="10" name="nrdoc_a1" id="nrdoc_a1" value="<?php echo $nrdoc_a1; ?>" />&nbsp;
                 <strong>Data alim.:</strong>
-                 <input type="hidden" size="4" maxlength="4" name="an_a1" id="an_a1" value="<? echo $an_e;?>" />
-                 <input type="text" size="10" maxlength="10" name="data_a1" id="data_a1" disabled  value="<? echo $data_a1;?>" />
+                 <input type="hidden" size="4" maxlength="4" name="an_a1" id="an_a1" value="<?php echo $an_e;?>" />
+                 <input type="text" size="10" maxlength="10" name="data_a1" id="data_a1" disabled  value="<?php echo $data_a1;?>" />
                  <a onclick="ShowCal('data_a1', 'zi_a1', 'luna_a1', 'an_a1', 'calend_a1'); return false;"><img style="border:none" src="images/calendar.gif" /></a>
-                 <input type="hidden" size="2" maxlength="2" name="luna_a1" id="luna_a1" value="<? echo $luna_a1;?>"  />
+                 <input type="hidden" size="2" maxlength="2" name="luna_a1" id="luna_a1" value="<?php echo $luna_a1;?>"  />
                                    &nbsp;
-                                   <input type="hidden" size="2" maxlength="2" name="zi_a1" id="zi_a1" value="<? echo $zi_a1 ;?>" />
+                                   <input type="hidden" size="2" maxlength="2" name="zi_a1" id="zi_a1" value="<?php echo $zi_a1 ;?>" />
 
                                  <!--<input type="text" size="2" maxlength="2" name="zi_a1" id="zi_a1" /> -->
                                  &nbsp; <strong>Ora: </strong>
-                     <select name='slct_oraa1' id='slct_oraa1' onchange='slct_ora_a1();'><option selected value=<? echo "'".$ora_a1."'>".$ora_a1; ?></option>
+                     <select name='slct_oraa1' id='slct_oraa1' onchange='slct_ora_a1();'><option selected value=<?php echo "'".$ora_a1."'>".$ora_a1; ?></option>
                                  <option value='1'>1</option>
                                  <option value='2'>2</option>
                                  <option value='3'>3</option>
@@ -947,30 +947,30 @@ if ($_SESSION['user']==1){
                                  <option value='23'>23</option>
                                  <option value='24'>24</option></select>
 
-                <input type="hidden" size="2" maxlength="2" name="ora_a1" id="ora_a1" value="<? echo $ora_a1;?>" />
+                <input type="hidden" size="2" maxlength="2" name="ora_a1" id="ora_a1" value="<?php echo $ora_a1;?>" />
                 <strong>Kilomtj. aliment.</strong>
-                                <input type="text" size="8" maxlength="8" name="klmtj_a1" id="klmtj_a1" value="<? echo $klmtj_a1; ?>" />
+                                <input type="text" size="8" maxlength="8" name="klmtj_a1" id="klmtj_a1" value="<?php echo $klmtj_a1; ?>" />
                                 <strong>Cantit.</strong>
-                                <input type="text" size="10" maxlength="10" name="cant1" id="cant1" value="<? echo $cant1; ?>" />
+                                <input type="text" size="10" maxlength="10" name="cant1" id="cant1" value="<?php echo $cant1; ?>" />
                            <strong>Pret/litru</strong>
-                         <input type="text" size="10" maxlength="10" name="pret1" id="pret1" value="<? echo $pret1; ?>" />        </tr></table></td></tr>
+                         <input type="text" size="10" maxlength="10" name="pret1" id="pret1" value="<?php echo $pret1; ?>" />        </tr></table></td></tr>
 
 
 
         <tr><td><table><tr>
                 <td> <strong><span class="style9">2</span> Nr.doc.alim 2:</strong>&nbsp;
-                  <input type="text" size="10" maxlength="10" name="nrdoc_a2" id="nrdoc_a2" value="<? echo $nrdoc_a2; ?>"  />                  &nbsp;
+                  <input type="text" size="10" maxlength="10" name="nrdoc_a2" id="nrdoc_a2" value="<?php echo $nrdoc_a2; ?>"  />                  &nbsp;
                 <strong>Data alim.:</strong>
-                <input type="hidden" size="4" maxlength="4" name="an_a2" id="an_a2"  value="<? echo $an_e;?>" />
-                 <input type="text" size="10" maxlength="10" name="data_a2" id="data_a2" disabled  value="<? echo $data_a2; ?>" />
+                <input type="hidden" size="4" maxlength="4" name="an_a2" id="an_a2"  value="<?php echo $an_e;?>" />
+                 <input type="text" size="10" maxlength="10" name="data_a2" id="data_a2" disabled  value="<?php echo $data_a2; ?>" />
                  <a onclick="ShowCal('data_a2', 'zi_a2', 'luna_a2', 'an_a2', 'calend_a2'); return false;"><img style="border:none" src="images/calendar.gif" /></a>
 
-                <input type="hidden" size="2" maxlength="2" name="luna_a2" id="luna_a2" value="<? echo $luna_a2;?>"  />
+                <input type="hidden" size="2" maxlength="2" name="luna_a2" id="luna_a2" value="<?php echo $luna_a2;?>"  />
                                    &nbsp;
-                                   <input type="hidden" size="2" maxlength="2" name="zi_a2" id="zi_a2" value="<? echo $zi_a2;?>"  />
+                                   <input type="hidden" size="2" maxlength="2" name="zi_a2" id="zi_a2" value="<?php echo $zi_a2;?>"  />
                 &nbsp; <strong>Ora: </strong>
 
-                                <select name='slct_oraa2' id='slct_oraa2' onchange='slct_ora_a2();'><option selected value=<? echo "'".$ora_a2."'>".$ora_a2; ?></option>
+                                <select name='slct_oraa2' id='slct_oraa2' onchange='slct_ora_a2();'><option selected value=<?php echo "'".$ora_a2."'>".$ora_a2; ?></option>
                                  <option value='1'>1</option>
                                  <option value='2'>2</option>
                                  <option value='3'>3</option>
@@ -995,29 +995,29 @@ if ($_SESSION['user']==1){
                                  <option value='22'>22</option>
                                  <option value='23'>23</option>
                                  <option value='24'>24</option></select>
-                        <input type="hidden" size="2" maxlength="2" name="ora_a2" id="ora_a2"  value="<? echo $ora_a2;?>"   />
+                        <input type="hidden" size="2" maxlength="2" name="ora_a2" id="ora_a2"  value="<?php echo $ora_a2;?>"   />
                                 <strong>Kilomtj. aliment.</strong>
-                                <input type="text" size="8" maxlength="8" name="klmtj_a2" id="klmtj_a2" value="<? echo $klmtj_a2; ?>" />
+                                <input type="text" size="8" maxlength="8" name="klmtj_a2" id="klmtj_a2" value="<?php echo $klmtj_a2; ?>" />
                                 <strong>Cantit.</strong>
-                                <input type="text" size="10" maxlength="10" name="cant2" id="cant2" value="<? echo $cant2; ?>" />
+                                <input type="text" size="10" maxlength="10" name="cant2" id="cant2" value="<?php echo $cant2; ?>" />
                            <strong>Pret/litru</strong>
-                         <input type="text" size="10" maxlength="10" name="pret2" id="pret2" value="<? echo $pret2; ?>" />        </tr></table></td></tr>
+                         <input type="text" size="10" maxlength="10" name="pret2" id="pret2" value="<?php echo $pret2; ?>" />        </tr></table></td></tr>
 
 
 <tr><td><table><tr>
 <td> <strong><span class="style9">3</span> Nr.doc.alim 3:</strong>&nbsp;
-                <input type="text" size="10" maxlength="10" name="nrdoc_a3" id="nrdoc_a3" value="<? echo $nrdoc_a3; ?>" />
+                <input type="text" size="10" maxlength="10" name="nrdoc_a3" id="nrdoc_a3" value="<?php echo $nrdoc_a3; ?>" />
                 &nbsp;
                 <strong>Data alim.:</strong>
-                <input type="hidden" size="4" maxlength="4" name="an_a3" id="an_a3" value="<? echo $an_e;?>" />
-                 <input type="text" size="10" maxlength="10" name="data_a3" id="data_a3" disabled  value="<? echo $data_a3;?>" />
+                <input type="hidden" size="4" maxlength="4" name="an_a3" id="an_a3" value="<?php echo $an_e;?>" />
+                 <input type="text" size="10" maxlength="10" name="data_a3" id="data_a3" disabled  value="<?php echo $data_a3;?>" />
                  <a onclick="ShowCal('data_a3', 'zi_a3', 'luna_a3', 'an_a3', 'calend_a3'); return false;"><img style="border:none" src="images/calendar.gif" /></a>
 
-                <input type="hidden" size="2" maxlength="2" name="luna_a3" id="luna_a3"  value="<? echo $luna_a3;?>" />
+                <input type="hidden" size="2" maxlength="2" name="luna_a3" id="luna_a3"  value="<?php echo $luna_a3;?>" />
                                    &nbsp;
                                    <input type="hidden" size="2" maxlength="2" name="zi_a3" id="zi_a3" />
                 &nbsp; <strong>Ora: </strong>
-                    <select name='slct_oraa3' id='slct_oraa3' onchange='slct_ora_a3();'><option selected value=<? echo "'".$ora_a3."'>".$ora_a3; ?></option>
+                    <select name='slct_oraa3' id='slct_oraa3' onchange='slct_ora_a3();'><option selected value=<?php echo "'".$ora_a3."'>".$ora_a3; ?></option>
                                  <option value='1'>1</option>
                                  <option value='2'>2</option>
                                  <option value='3'>3</option>
@@ -1043,30 +1043,30 @@ if ($_SESSION['user']==1){
                                  <option value='23'>23</option>
                                  <option value='24'>24</option></select>
 
-                         <input type="hidden" size="2" maxlength="2" name="ora_a3" id="ora_a3" value="<? echo $ora_a3;?>" />
+                         <input type="hidden" size="2" maxlength="2" name="ora_a3" id="ora_a3" value="<?php echo $ora_a3;?>" />
                             <strong>Kilomtj. aliment.</strong>
-                                <input type="text" size="8" maxlength="8" name="klmtj_a3" id="klmtj_a3" value="<? echo $klmtj_a3; ?>" / />
+                                <input type="text" size="8" maxlength="8" name="klmtj_a3" id="klmtj_a3" value="<?php echo $klmtj_a3; ?>" / />
                                 <strong>Cantit.</strong>
-                                <input type="text" size="10" maxlength="10" name="cant3" id="cant3" value="<? echo $cant3; ?>" />
+                                <input type="text" size="10" maxlength="10" name="cant3" id="cant3" value="<?php echo $cant3; ?>" />
                            <strong>Pret/litru</strong>
-                         <input type="text" size="10" maxlength="10" name="pret3" id="pret3" value="<? echo $pret3; ?>" />
+                         <input type="text" size="10" maxlength="10" name="pret3" id="pret3" value="<?php echo $pret3; ?>" />
 
 </tr></table></td></tr>
 
 
 <tr><td><table><tr>
 <td> <strong><span class="style9">4</span> Nr.doc.alim 4:</strong>&nbsp;
-                <input type="text" size="10" maxlength="10" name="nrdoc_a4" id="nrdoc_a4" value="<? echo $nrdoc_a4; ?>" />&nbsp;
+                <input type="text" size="10" maxlength="10" name="nrdoc_a4" id="nrdoc_a4" value="<?php echo $nrdoc_a4; ?>" />&nbsp;
                 <strong>Data alim.:</strong>
-                <input type="hidden" size="4" maxlength="4" name="an_a4" id="an_a4" value="<? echo $an_e;?>" />
-                <input type="text" size="10" maxlength="10" name="data_a4" id="data_a4" disabled  value="<? echo $data_a4;?>" />
+                <input type="hidden" size="4" maxlength="4" name="an_a4" id="an_a4" value="<?php echo $an_e;?>" />
+                <input type="text" size="10" maxlength="10" name="data_a4" id="data_a4" disabled  value="<?php echo $data_a4;?>" />
                  <a onclick="ShowCal('data_a4', 'zi_a4', 'luna_a4', 'an_a4', 'calend_a4'); return false;"><img style="border:none" src="images/calendar.gif" /></a>
 
-                <input type="hidden" size="2" maxlength="2" name="luna_a4" id="luna_a4" value="<? echo $luna_a4;?>"  />
+                <input type="hidden" size="2" maxlength="2" name="luna_a4" id="luna_a4" value="<?php echo $luna_a4;?>"  />
                                    &nbsp;
                                    <input type="hidden" size="2" maxlength="2" name="zi_a4" id="zi_a4" />
                 &nbsp; <strong>Ora: </strong>
-                    <select name='slct_oraa4' id='slct_oraa4' onchange='slct_ora_a4();'><option selected value=<? echo "'".$ora_a4."'>".$ora_a4; ?></option>
+                    <select name='slct_oraa4' id='slct_oraa4' onchange='slct_ora_a4();'><option selected value=<?php echo "'".$ora_a4."'>".$ora_a4; ?></option>
                                  <option value='1'>1</option>
                                  <option value='2'>2</option>
                                  <option value='3'>3</option>
@@ -1092,28 +1092,28 @@ if ($_SESSION['user']==1){
                                  <option value='23'>23</option>
                                  <option value='24'>24</option></select>
 
-                <input type="hidden" size="2" maxlength="2" name="ora_a4" id="ora_a4" value="<? echo $ora_a4;?>" />
+                <input type="hidden" size="2" maxlength="2" name="ora_a4" id="ora_a4" value="<?php echo $ora_a4;?>" />
                 <strong>Kilomtj. aliment.</strong>
-                                <input type="text" size="8" maxlength="8" name="klmtj_a4" id="klmtj_a4" value="<? echo $klmtj_a4; ?>" //>
+                                <input type="text" size="8" maxlength="8" name="klmtj_a4" id="klmtj_a4" value="<?php echo $klmtj_a4; ?>" //>
                                 <strong>Cantit.</strong>
-                                <input type="text" size="10" maxlength="10" name="cant4" id="cant4" value="<? echo $cant4; ?>" />
+                                <input type="text" size="10" maxlength="10" name="cant4" id="cant4" value="<?php echo $cant4; ?>" />
                            <strong>Pret/litru</strong>
-                         <input type="text" size="10" maxlength="10" name="pret4" id="pret4" value="<? echo $pret4; ?>" /></tr></table></td></tr>
+                         <input type="text" size="10" maxlength="10" name="pret4" id="pret4" value="<?php echo $pret4; ?>" /></tr></table></td></tr>
 
 
 <tr><td><table><tr>
 <td> <strong><span class="style9">5</span> Nr.doc.alim 5:</strong>&nbsp;
-                <input type="text" size="10" maxlength="10" name="nrdoc_a5" id="nrdoc_a5" value="<? echo $nrdoc_a5; ?>" />&nbsp;
+                <input type="text" size="10" maxlength="10" name="nrdoc_a5" id="nrdoc_a5" value="<?php echo $nrdoc_a5; ?>" />&nbsp;
                 <strong>Data alim.:</strong>
-                <input type="hidden" size="4" maxlength="4" name="an_a5" id="an_a5" value="<? echo $an_e;?>" />
-                <input type="text" size="10" maxlength="10" name="data_a5" id="data_a5" disabled  value="<? echo $data_a5;?>" />
+                <input type="hidden" size="4" maxlength="4" name="an_a5" id="an_a5" value="<?php echo $an_e;?>" />
+                <input type="text" size="10" maxlength="10" name="data_a5" id="data_a5" disabled  value="<?php echo $data_a5;?>" />
                 <a onclick="ShowCal('data_a5', 'zi_a5', 'luna_a5', 'an_a5', 'calend_a5'); return false;"><img style="border:none" src="images/calendar.gif" /></a>
 
-                <input type="hidden" size="2" maxlength="2" name="luna_a5" id="luna_a5" value="<? echo $luna_a5;?>"  />
+                <input type="hidden" size="2" maxlength="2" name="luna_a5" id="luna_a5" value="<?php echo $luna_a5;?>"  />
                                    &nbsp;
                                    <input type="hidden" size="2" maxlength="2" name="zi_a5" id="zi_a5" />
                                 &nbsp; <strong>Ora: </strong>
-                    <select name='slct_oraa5' id='slct_oraa5' onchange='slct_ora_a5();'><option selected value=<? echo "'".$ora_a5."'>".$ora_a5; ?></option>
+                    <select name='slct_oraa5' id='slct_oraa5' onchange='slct_ora_a5();'><option selected value=<?php echo "'".$ora_a5."'>".$ora_a5; ?></option>
                                  <option value='1'>1</option>
                                  <option value='2'>2</option>
                                  <option value='3'>3</option>
@@ -1139,13 +1139,13 @@ if ($_SESSION['user']==1){
                                  <option value='23'>23</option>
                                  <option value='24'>24</option></select>
 
-                                <input type="hidden" size="2" maxlength="2" name="ora_a5" id="ora_a5" value="<? echo $ora_a5;?>" />
+                                <input type="hidden" size="2" maxlength="2" name="ora_a5" id="ora_a5" value="<?php echo $ora_a5;?>" />
                                 <strong>Kilomtj. aliment.</strong>
-                                <input type="text" size="8" maxlength="8" name="klmtj_a5" id="klmtj_a5" value="<? echo $klmtj_a5; ?>" />
+                                <input type="text" size="8" maxlength="8" name="klmtj_a5" id="klmtj_a5" value="<?php echo $klmtj_a5; ?>" />
                                 <strong>Cantit.</strong>
-                                <input type="text" size="10" maxlength="10" name="cant5" id="cant5" value="<? echo $cant5; ?>" />
+                                <input type="text" size="10" maxlength="10" name="cant5" id="cant5" value="<?php echo $cant5; ?>" />
                            <strong>Pret/litru</strong>
-                         <input type="text" size="10" maxlength="10" name="pret5" id="pret5" value="<? echo $pret5; ?>" /></tr></table></td></tr>
+                         <input type="text" size="10" maxlength="10" name="pret5" id="pret5" value="<?php echo $pret5; ?>" /></tr></table></td></tr>
 
 </table>
 
@@ -1167,7 +1167,7 @@ if ($_SESSION['user']==1){
 
 </form></center>
 <center>
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";

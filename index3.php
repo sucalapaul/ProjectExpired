@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -52,8 +52,8 @@ document.getElementById('parola').focus()
 </script>
 </head>
 
-<body bgcolor="#cfe4e9"   <? if (!isset($_POST['parola'])){echo 'onload="setFocus()"';}?>>
-<?
+<body bgcolor="#cfe4e9"   <?php if (!isset($_POST['parola'])){echo 'onload="setFocus()"';}?>>
+<?php
 
 if (!isset($_SESSION['user'])){$_SESSION['user']=0;}
 if (isset($_POST['parola'])){
@@ -73,7 +73,7 @@ if (isset($_POST['actiune'])){
 
 }
 ?>
-<?
+<?php
 if ($_SESSION['user']==1){
 echo '
 <script type="text/javascript" src="milonic_src.js"></script>
@@ -92,12 +92,12 @@ echo '
         <tr> <td height="60" width="1000" valign="top"><img src="images/sigla.png" width="300" height="60" align="left" ></td> </tr>
         <tr> <td height="116" valign="center" bordercolor="#ECE9D8"><div align="center"><span class="style5">Fi&#351;&#259; de Activitate Zilnic&#259; </span></div></td>
         </tr>
-        <tr> <td height="<? if ($_SESSION['user']==1){echo '300';}else{echo '50';} ?>" valign="baseline">&nbsp;
+        <tr> <td height="<?php if ($_SESSION['user']==1){echo '300';}else{echo '50';} ?>" valign="baseline">&nbsp;
           </td>
         </tr>
 </table>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 

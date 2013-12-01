@@ -1,4 +1,4 @@
-<?
+<?php
 	include "conexiune.php";
 	require "dataazi.php";
 

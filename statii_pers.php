@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -143,7 +143,7 @@ function slct_nr_statii(){
 <center><a href="curse_pers.php?indice=0" class="style2 style3 style1"><font size="+1" color="#000000">&lt;&nbsp;Inapoi</font></a>
 </center>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";
@@ -280,7 +280,7 @@ if ($_SESSION['user']==1){
 		<td> 
 			<table cellpadding="0">
 				<tr>
-            		<td align="center" height="35"><strong><span class="style3"><em>Indice cursa:</em></span> <? echo $id_c.' - traseul - '.$statie_deni.'-'.$statie_denf.' cursa cu nr.'.$nr_cursa;?> </strong>                    </td>
+            		<td align="center" height="35"><strong><span class="style3"><em>Indice cursa:</em></span> <?php echo $id_c.' - traseul - '.$statie_deni.'-'.$statie_denf.' cursa cu nr.'.$nr_cursa;?> </strong>                    </td>
 				</tr>
 			</table>		</td>
 	</tr>
@@ -288,7 +288,7 @@ if ($_SESSION['user']==1){
 		<td>
 			<table cellpadding="0">
 				<tr>
-					<td align="center" height="35"><strong><span class="style3"><em>Urmeaza nr.statie: </em></span><? echo $nrstatie;?> </strong>        			</td>
+					<td align="center" height="35"><strong><span class="style3"><em>Urmeaza nr.statie: </em></span><?php echo $nrstatie;?> </strong>        			</td>
 				</tr>
 			</table>		</td>
 	</tr>
@@ -296,7 +296,7 @@ if ($_SESSION['user']==1){
 	<tr>
              <td align="center" height="35"><strong>Alege statia:</strong>
                  <!-- <input type="text"  size="35" name="statia" maxlength="35"></td>-->
-<?
+<?php
 if ($_SESSION['user']==1){
 
 		require "array_statii.php";$nr_statii=$i-1;
@@ -368,7 +368,7 @@ if ($_SESSION['user']==1){
 	<tr><td height="35">
                 <strong>Inserare</strong><em><strong> (daca e cazul!)</strong></em>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 		echo "<select name='slct_nr_statie' id='slct_nr_statie'";
@@ -404,7 +404,7 @@ if ($_SESSION['user']==1){
 </table>
 </form>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";

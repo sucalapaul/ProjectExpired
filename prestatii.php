@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <html>
@@ -69,7 +69,7 @@ function trimite(){
 <form method="POST" action="lista_prestatii.php"  name="form1" id="form1">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em><strong><span class="style7">- masina:  </span>:</strong></em>
 	
-<?
+<?php
 if ($_SESSION['user']==1){
 	require "array_masini.php";$nr_masini=$i-1;
 	echo "<select name='slct_mas' id='slct_mas'";

@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <style type="text/css">
@@ -6,7 +6,7 @@ session_start();
 .style5 {font-size: 18px}
 -->
 </style>
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";
@@ -36,12 +36,12 @@ if ($_SESSION['user']==1){
 ?>
 
 <div align="center">
-<span class="style5">Desfasuratorul prestatiilor efectuate in baza contractului incheiat intre SC Tur Cento Trans SRL si A.C.E. Cluj anexa 5 la factura Nr. <? echo $fact; ?> </span><br>
+<span class="style5">Desfasuratorul prestatiilor efectuate in baza contractului incheiat intre SC Tur Cento Trans SRL si A.C.E. Cluj anexa 5 la factura Nr. <?php echo $fact; ?> </span><br>
 <div align="center">
-<span class="style5">Transporturi de MARFURI efectuate in perioada</span><font size="+1"><strong> <? echo $perioada; ?></strong></font>
+<span class="style5">Transporturi de MARFURI efectuate in perioada</span><font size="+1"><strong> <?php echo $perioada; ?></strong></font>
 
 <span class="style5">de masina</span>
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";
@@ -58,7 +58,7 @@ if ($_SESSION['user']==1){
 }
 ?>
 <br>
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";
@@ -112,7 +112,7 @@ if ($_SESSION['user']==1){
 -->
 </style>
 <br>
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	echo "<table border=1 cellspacing='0'>";
@@ -254,4 +254,4 @@ if ($_SESSION['user']==1){
 </div></center>
 <BR>
 &nbsp;&nbsp;&nbsp;&nbsp;<strong>SC Tur Cento Trans SRL <br>
-</strong>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Intocmit de : <? echo $nume; ?> </strong>
+</strong>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Intocmit de : <?php echo $nume; ?> </strong>

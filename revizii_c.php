@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <!--%@LANGUAGE="JAVASCRIPT" CODEPAGE="1252"%-->
@@ -133,12 +133,12 @@ document.getElementById("clasi").value=document.getElementById("slct_cls").value
 
 <body bgcolor="#cfe4e9">
 
-<center><a href="<? if (isset($_GET['trim'])){echo $_GET['trim'];} else {echo 'masini.php?indice=0';} ?>" class="style2 style3 style1"><font size="+1" color="#000000">&lt;&nbsp;Inapoi</font></a>
+<center><a href="<?php if (isset($_GET['trim'])){echo $_GET['trim'];} else {echo 'masini.php?indice=0';} ?>" class="style2 style3 style1"><font size="+1" color="#000000">&lt;&nbsp;Inapoi</font></a>
 </center>
 <br />
 <br />
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 $indice=$_GET['indice'];
@@ -298,39 +298,39 @@ echo '<META HTTP-EQUIV="Refresh" CONTENT="1; URL=revizii_c.php?indice='.$indice.
 
 
 <table width="600" border="1" cellpadding="0">
-<tr><td  align="center" height="35"><strong><span class="style3"><em>Numar inmatriculare masina:</em></span> <? echo $nr_inmatric; ?> </strong>
+<tr><td  align="center" height="35"><strong><span class="style3"><em>Numar inmatriculare masina:</em></span> <?php echo $nr_inmatric; ?> </strong>
 </td></tr>
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Data expirarii ITP :</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_itp" id="zi_itp" value="<? echo date("d" ,$d1); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_itp" id="luna_itp"  value="<? echo date("m" ,$d1); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_itp" id="an_itp"   value="<? echo date("Y" ,$d1); ?>" />
-<input type="text" size="10" maxlength="10" name="exp_itp" id="exp_itp" disabled value="<? echo $exp_itp; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_itp" id="zi_itp" value="<?php echo date("d" ,$d1); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_itp" id="luna_itp"  value="<?php echo date("m" ,$d1); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_itp" id="an_itp"   value="<?php echo date("Y" ,$d1); ?>" />
+<input type="text" size="10" maxlength="10" name="exp_itp" id="exp_itp" disabled value="<?php echo $exp_itp; ?>"/>
 <!--<input type="text" size="10" maxlength="10" name="exp_itp" id="exp_itp" disabled /> -->
 
 <a onclick="ShowCal('exp_itp', 'zi_itp', 'luna_itp', 'an_itp', 'calend_itp'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('itp')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>
 </td></tr>
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Data expirarii tahograf :</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_tah" id="zi_tah" value="<? echo date("d" ,$d2); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_tah" id="luna_tah" value="<? echo date("m" ,$d2); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_tah" id="an_tah" value="<? echo date("Y" ,$d2); ?>" />
-<!--  <input type="text" size="10" maxlength="10" name="exp_tah" id="exp_tah" disabled value="<? echo $exp_tah; ?>"/>-->
-<input type="text" size="10" maxlength="10" name="exp_tah" id="exp_tah" disabled value="<? echo $exp_tah; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_tah" id="zi_tah" value="<?php echo date("d" ,$d2); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_tah" id="luna_tah" value="<?php echo date("m" ,$d2); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_tah" id="an_tah" value="<?php echo date("Y" ,$d2); ?>" />
+<!--  <input type="text" size="10" maxlength="10" name="exp_tah" id="exp_tah" disabled value="<?php echo $exp_tah; ?>"/>-->
+<input type="text" size="10" maxlength="10" name="exp_tah" id="exp_tah" disabled value="<?php echo $exp_tah; ?>"/>
 <a onclick="ShowCal('exp_tah', 'zi_tah', 'luna_tah', 'an_tah', 'calend_tah'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('tah')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>
 </td></tr>
 
 
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Data expirarii LARM :</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_larm" id="zi_larm" value="<? echo date("d" ,$d3); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_larm" id="luna_larm" value="<? echo date("m" ,$d3); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_larm" id="an_larm" value="<? echo date("Y" ,$d3); ?>" />
-<!--  <input type="text" size="10" maxlength="10" name="exp_larm" id="exp_larm" disabled value="<? echo $exp_larm; ?>"/>-->
-<input type="text" size="10" maxlength="10" name="exp_larm" id="exp_larm" disabled value="<? echo $exp_larm; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_larm" id="zi_larm" value="<?php echo date("d" ,$d3); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_larm" id="luna_larm" value="<?php echo date("m" ,$d3); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_larm" id="an_larm" value="<?php echo date("Y" ,$d3); ?>" />
+<!--  <input type="text" size="10" maxlength="10" name="exp_larm" id="exp_larm" disabled value="<?php echo $exp_larm; ?>"/>-->
+<input type="text" size="10" maxlength="10" name="exp_larm" id="exp_larm" disabled value="<?php echo $exp_larm; ?>"/>
 <a onclick="ShowCal('exp_larm', 'zi_larm', 'luna_larm', 'an_larm', 'calend_larm'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('larm')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>  
 
 <!--			  clasificare
 <input type="hidden" id="clasi" name="clasi" value="">
 <select name='slct_cls' id='slct_cls' onchange='slct_clas();'>
-<option selected value= <? echo $clasi.'>'.$clasi; ?> </option>
+<option selected value= <?php echo $clasi.'>'.$clasi; ?> </option>
 <option value='1 stea'>1 stea</option>
 <option value='2 stele'>2 stele</option>
 <option value='3 stele'>3 stele</option>
@@ -343,35 +343,35 @@ echo '<META HTTP-EQUIV="Refresh" CONTENT="1; URL=revizii_c.php?indice='.$indice.
 </td>
 </tr>
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Data expirarii rca :</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_rca" id="zi_rca" value="<? echo date("d" ,$d4); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_rca" id="luna_rca" value="<? echo date("m" ,$d4); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_rca" id="an_rca" value="<? echo date("Y" ,$d4); ?>" />
-<!--   <input type="text" size="10" maxlength="10" name="exp_rca" id="exp_rca" disabled value="<? echo $exp_rca; ?>"/>-->
-<input type="text" size="10" maxlength="10" name="exp_rca" id="exp_rca" disabled value="<? echo $exp_rca; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_rca" id="zi_rca" value="<?php echo date("d" ,$d4); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_rca" id="luna_rca" value="<?php echo date("m" ,$d4); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_rca" id="an_rca" value="<?php echo date("Y" ,$d4); ?>" />
+<!--   <input type="text" size="10" maxlength="10" name="exp_rca" id="exp_rca" disabled value="<?php echo $exp_rca; ?>"/>-->
+<input type="text" size="10" maxlength="10" name="exp_rca" id="exp_rca" disabled value="<?php echo $exp_rca; ?>"/>
 <a onclick="ShowCal('exp_rca', 'zi_rca', 'luna_rca', 'an_rca', 'calend_rca'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('rca')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>
 </td></tr>
 
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Data expirarii casco :</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_cas" id="zi_cas" value="<? echo date("d" ,$d5); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_cas" id="luna_cas" value="<? echo date("m" ,$d5); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_cas" id="an_cas" value="<? echo date("Y" ,$d5); ?>" />
-<!--   <input type="text" size="10" maxlength="10" name="exp_cas" id="exp_cas" disabled value="<? echo $exp_cas; ?>"/>-->
-<input type="text" size="10" maxlength="10" name="exp_cas" id="exp_cas" disabled value="<? echo $exp_cas; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_cas" id="zi_cas" value="<?php echo date("d" ,$d5); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_cas" id="luna_cas" value="<?php echo date("m" ,$d5); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_cas" id="an_cas" value="<?php echo date("Y" ,$d5); ?>" />
+<!--   <input type="text" size="10" maxlength="10" name="exp_cas" id="exp_cas" disabled value="<?php echo $exp_cas; ?>"/>-->
+<input type="text" size="10" maxlength="10" name="exp_cas" id="exp_cas" disabled value="<?php echo $exp_cas; ?>"/>
 <a onclick="ShowCal('exp_cas', 'zi_cas', 'luna_cas', 'an_cas', 'calend_cas'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('cas')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>
 </td></tr>
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Data expirarii licenta :</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_lic" id="zi_lic" value="<? echo date("d" ,$d6); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_lic" id="luna_lic" value="<? echo date("m" ,$d6); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_lic" id="an_lic" value="<? echo date("Y" ,$d6); ?>" />
-<!--   <input type="text" size="10" maxlength="10" name="exp_lic" id="exp_lic" disabled value="<? echo $exp_lic; ?>"/>-->
-<input type="text" size="10" maxlength="10" name="exp_lic" id="exp_lic" disabled value="<? echo $exp_lic; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_lic" id="zi_lic" value="<?php echo date("d" ,$d6); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_lic" id="luna_lic" value="<?php echo date("m" ,$d6); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_lic" id="an_lic" value="<?php echo date("Y" ,$d6); ?>" />
+<!--   <input type="text" size="10" maxlength="10" name="exp_lic" id="exp_lic" disabled value="<?php echo $exp_lic; ?>"/>-->
+<input type="text" size="10" maxlength="10" name="exp_lic" id="exp_lic" disabled value="<?php echo $exp_lic; ?>"/>
 <a onclick="ShowCal('exp_lic', 'zi_lic', 'luna_lic', 'an_lic', 'calend_lic'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('lic')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>
 </td></tr>
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Data expirarii ITPI :</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_itpi" id="zi_itpi" value="<? echo date("d" ,$d7); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_itpi" id="luna_itpi"  value="<? echo date("m" ,$d7); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_itpi" id="an_itpi"   value="<? echo date("Y" ,$d7); ?>" />
-<input type="text" size="10" maxlength="10" name="exp_itpi" id="exp_itpi" disabled value="<? echo $exp_itpi; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_itpi" id="zi_itpi" value="<?php echo date("d" ,$d7); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_itpi" id="luna_itpi"  value="<?php echo date("m" ,$d7); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_itpi" id="an_itpi"   value="<?php echo date("Y" ,$d7); ?>" />
+<input type="text" size="10" maxlength="10" name="exp_itpi" id="exp_itpi" disabled value="<?php echo $exp_itpi; ?>"/>
 <!--<input type="text" size="10" maxlength="10" name="exp_itp" id="exp_itp" disabled /> -->
 
 <a onclick="ShowCal('exp_itpi', 'zi_itpi', 'luna_itpi', 'an_itpi', 'calend_itpi'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('itpi')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>
@@ -381,10 +381,10 @@ echo '<META HTTP-EQUIV="Refresh" CONTENT="1; URL=revizii_c.php?indice='.$indice.
 
 
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Durata contract leasing:</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_leasing" id="zi_leasing" value="<? echo date("d" ,$d8); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_leasing" id="luna_leasing"  value="<? echo date("m" ,$d8); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_leasing" id="an_leasing"   value="<? echo date("Y" ,$d8); ?>" />
-<input type="text" size="10" maxlength="10" name="exp_leasing" id="exp_leasing" disabled value="<? echo $leasing; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_leasing" id="zi_leasing" value="<?php echo date("d" ,$d8); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_leasing" id="luna_leasing"  value="<?php echo date("m" ,$d8); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_leasing" id="an_leasing"   value="<?php echo date("Y" ,$d8); ?>" />
+<input type="text" size="10" maxlength="10" name="exp_leasing" id="exp_leasing" disabled value="<?php echo $leasing; ?>"/>
 <!--<input type="text" size="10" maxlength="10" name="exp_itp" id="exp_itp" disabled /> -->
 
 <a onclick="ShowCal('exp_leasing', 'zi_leasing', 'luna_leasing', 'an_leasing', 'calend_leasing'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('leasing')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>
@@ -394,11 +394,11 @@ echo '<META HTTP-EQUIV="Refresh" CONTENT="1; URL=revizii_c.php?indice='.$indice.
 
 
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Data expirarii "A" :</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_a" id="zi_a" value="<? echo date("d" ,$d4); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_a" id="luna_a" value="<? echo date("m" ,$d4); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_a" id="an_a" value="<? echo date("Y" ,$d4); ?>" />
-<!--   <input type="text" size="10" maxlength="10" name="exp_a" id="exp_a" disabled value="<? echo $exp_a; ?>"/>-->
-<input type="text" size="10" maxlength="10" name="exp_a" id="exp_a" disabled value="<? echo $exp_a; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_a" id="zi_a" value="<?php echo date("d" ,$d4); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_a" id="luna_a" value="<?php echo date("m" ,$d4); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_a" id="an_a" value="<?php echo date("Y" ,$d4); ?>" />
+<!--   <input type="text" size="10" maxlength="10" name="exp_a" id="exp_a" disabled value="<?php echo $exp_a; ?>"/>-->
+<input type="text" size="10" maxlength="10" name="exp_a" id="exp_a" disabled value="<?php echo $exp_a; ?>"/>
 <a onclick="ShowCal('exp_a', 'zi_a', 'luna_a', 'an_a', 'calend_a'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('a')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>
 </td></tr>
 
@@ -408,21 +408,21 @@ echo '<META HTTP-EQUIV="Refresh" CONTENT="1; URL=revizii_c.php?indice='.$indice.
 
 
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Data expirarii rovigneta :</strong>
-<input type="hidden" size="2" maxlength="2" name="zi_rovi" id="zi_rovi" value="<? echo date("d" ,$d4); ?>" />
-<input type="hidden" size="2" maxlength="2" name="luna_rovi" id="luna_rovi" value="<? echo date("m" ,$d4); ?>" />
-<input type="hidden" size="4" maxlength="4" name="an_rovi" id="an_rovi" value="<? echo date("Y" ,$d4); ?>" />
-<!--   <input type="text" size="10" maxlength="10" name="exp_rovi" id="exp_rovi" disabled value="<? echo $exp_rovi; ?>"/>-->
-<input type="text" size="10" maxlength="10" name="exp_rovi" id="exp_rovi" disabled value="<? echo $exp_rovi; ?>"/>
+<input type="hidden" size="2" maxlength="2" name="zi_rovi" id="zi_rovi" value="<?php echo date("d" ,$d4); ?>" />
+<input type="hidden" size="2" maxlength="2" name="luna_rovi" id="luna_rovi" value="<?php echo date("m" ,$d4); ?>" />
+<input type="hidden" size="4" maxlength="4" name="an_rovi" id="an_rovi" value="<?php echo date("Y" ,$d4); ?>" />
+<!--   <input type="text" size="10" maxlength="10" name="exp_rovi" id="exp_rovi" disabled value="<?php echo $exp_rovi; ?>"/>-->
+<input type="text" size="10" maxlength="10" name="exp_rovi" id="exp_rovi" disabled value="<?php echo $exp_rovi; ?>"/>
 <a onclick="ShowCal('exp_rovi', 'zi_rovi', 'luna_rovi', 'an_rovi', 'calend_rovi'); return false;"><img style="border:none" src="images/calendar.gif" /></a><a onclick="nuare('rovi')">&nbsp;&nbsp;<img src="images/buton_nu_are.jpg" style="cursor:pointer" /></a>
 </td></tr>
 
 
 
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Seria casco :</strong>
-<input type="text" size="10" maxlength="10" name="seria_casco" id="seria_casco"  value="<? echo $seria_casco; ?>"/>
+<input type="text" size="10" maxlength="10" name="seria_casco" id="seria_casco"  value="<?php echo $seria_casco; ?>"/>
 </td></tr>	
 <tr><td align="left" height="35">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Societatea de asigurari :</strong>
-<input type="text" size="15" maxlength="15" name="societatea" id="societatea"  value="<? echo $societatea; ?>"/>
+<input type="text" size="15" maxlength="15" name="societatea" id="societatea"  value="<?php echo $societatea; ?>"/>
 </td></tr>	
 
 
@@ -446,7 +446,7 @@ echo '<META HTTP-EQUIV="Refresh" CONTENT="1; URL=revizii_c.php?indice='.$indice.
 
 <center>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 /*echo $indice;*/

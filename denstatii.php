@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -156,21 +156,21 @@ if ($_SESSION['user']==1){
 <input type="hidden" id="indice_vechi" name="indice_vechi" value="">
 <input type="hidden" id="denumire_vechi" name="denumire_vechi" value="">
 <input type="hidden" id="tara_vechi" name="tara_vechi" value="">
-<input type="hidden" id="indice" name="indice" value="<? echo $indice; ?>">
+<input type="hidden" id="indice" name="indice" value="<?php echo $indice; ?>">
 <table>
          <tr>
                 <td width="87"><strong>Nume statie:</strong> </td>
-           <td width="241"><input type="text"  size="35" name="denumire" maxlength="35" value="<? echo $denumire; ?>"></td>
+           <td width="241"><input type="text"  size="35" name="denumire" maxlength="35" value="<?php echo $denumire; ?>"></td>
 		  
 			   
         </tr>
 		 <tr>
 	     <td width="140" align="left"><strong>Tara:</strong> 
-             <input type="hidden" name="tara"  size="1"maxlength="1" value="<? echo $tara; ?>"/>
+             <input type="hidden" name="tara"  size="1"maxlength="1" value="<?php echo $tara; ?>"/>
 			 </td>
 			 <td width="241" align="left">
 				<select name='slct_tar' id='slct_tar' onchange='slct_tara();'>
-						 <option selected value='<? echo $tara; ?>'><? if ($tara=='A'){echo 'Anglia';}; if ($tara=='S'){echo 'Spania';}; if ($tara=='I'){echo 'Italia';}; if ($tara=='R'){echo 'Romania';}; ?></option>
+						 <option selected value='<?php echo $tara; ?>'><?php if ($tara=='A'){echo 'Anglia';}; if ($tara=='S'){echo 'Spania';}; if ($tara=='I'){echo 'Italia';}; if ($tara=='R'){echo 'Romania';}; ?></option>
 						 <option value='A'>Anglia</option> 
 						 <option value='S'>Spania</option>
 						 <option value='I'>Italia</option>
@@ -191,7 +191,7 @@ if ($_SESSION['user']==1){
 </table>
 </form>
 <p>
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";

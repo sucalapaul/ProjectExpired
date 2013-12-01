@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 
@@ -90,7 +90,7 @@ function slct_nr_curse(){
 <center><a href="foiparc.php?nr=0" class="style2 style3 style1"><font size="+1" color="#000000">&lt;&nbsp;Inapoi</font></a>
 </center>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";
@@ -186,14 +186,14 @@ if ($_SESSION['user']==1){
 
 <table width="600" border="1" cellpadding="0">
         <tr><td> <table cellpadding="0"><tr>
-            <td height="35"><strong><span class="style3"><em>Nr.foaie parcurs:</em></span> <? echo $nrdoc; ?> </strong>&nbsp;&nbsp;&nbsp;
+            <td height="35"><strong><span class="style3"><em>Nr.foaie parcurs:</em></span> <?php echo $nrdoc; ?> </strong>&nbsp;&nbsp;&nbsp;
             <!--input type="text" size="10" maxlength="10" name="nrdoc" id="nrdoc"/-->
                         </td></tr>
 </table></td></tr>
 <tr><td align="center"><br/>
-                <strong><span class="style3"><em>Urmeaza nr. cursa: </em></span><? echo $nr_cursa;?> </strong>
+                <strong><span class="style3"><em>Urmeaza nr. cursa: </em></span><?php echo $nr_cursa;?> </strong>
                 &nbsp;&nbsp;&nbsp;<strong>Alege cursa:</strong>
-<?
+<?php
 if ($_SESSION['user']==1){
 
 		require "array_curse.php";$nr_curse=$i-1;
@@ -217,7 +217,7 @@ if ($_SESSION['user']==1){
 <tr><td>
                 <strong>Inserare</strong><em><strong> (daca e cazul!)</strong></em>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 		echo "<select name='slct_nr_cursa' id='slct_nr_cursa'";
@@ -255,7 +255,7 @@ if ($_SESSION['user']==1){
 <center>
 </form>
 
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	include "conexiune.php";

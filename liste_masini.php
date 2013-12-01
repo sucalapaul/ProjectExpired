@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 ?>
 <html>
@@ -69,7 +69,7 @@ function slct_luna_e(){
 <form method="POST" action="lista_masina.php" name="form1" id="form1">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em><strong>- masina:</strong></em>
 	
-<?
+<?php
 if ($_SESSION['user']==1){
 
 	require "array_masini.php";$nr_masini=$i-1;

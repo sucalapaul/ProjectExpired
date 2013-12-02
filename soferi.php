@@ -178,6 +178,8 @@ if ($_SESSION['user']==1){
 
 	if ($indice!=0 && $indice != "")
 	{
+		
+
 		$qu="select all * from soferi where indice='$indice'";
 		include "conexiune.php";
 		$rqt = mysql_query($qu);
@@ -246,8 +248,14 @@ if ($_SESSION['user']==1){
 	// while ($row=mysql_fetch_row($sql)) { $randuri=$randuri+1; }
 	// mysql_close($conexiune);
 	
+	include "verifica_revizii.php";
+	
 	include "conexiune.php";
-	$sql=mysql_query("SELECT * FROM soferi order by indice desc");
+	$sql=mysql_query("SELECT soferi.indice, soferi.nume, soferi.cnp, avize_soferi.exp
+						FROM  `soferi` 
+						INNER JOIN avize_soferi ON soferi.indice = avize_soferi.id_sofer
+						WHERE 1 
+						ORDER BY nume ASC");
 
 	echo "<table border=1>";
 	echo "<tr><td>Indice</td><td>Nume</td><td>CNP</td><td>Completare avize</td></tr>";
@@ -259,8 +267,7 @@ if ($_SESSION['user']==1){
 					$indice = $row['indice'];
 					$nume = $row['nume'];
 					$cnp = $row['cnp'];
-
-					$exp = 0;
+					$exp = $row['exp'];
 
 					echo '<tr bgcolor="#cfe4e9" ';
 					echo " id='linie$i'  >";

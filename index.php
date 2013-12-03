@@ -116,6 +116,10 @@ if ($_SESSION['user']==1){
 
 
 	include "verifica_revizii.php";
+
+	//************************
+	//MASINI
+	//************************
 	$expirate=0;
 	$msg='<table border="0"><tr><td width="200"><marquee behavior=alternate><font size="+2">ATENTIE !!!</font></marquee></td></tr></table><br /> Va rugam sa actualizati reviziile la urmatoarele masini: ';
 
@@ -143,10 +147,54 @@ if ($_SESSION['user']==1){
 						}
 					}
 	if ($expirate==1)
-		{echo '<table border="1" cellspacing="0" cellpadding="1"><tr><td>';
+	{
+		echo '<table border="1" cellspacing="0" cellpadding="1"><tr><td>';
 		echo '<font color="#ff0000" size="+1">'.$msg.'.</font>';
 		echo '</td></tr></table>';
+	}
+
+	echo "<br /><br />";
+
+	/////////////////////////////////
+	//SOFERI
+	/////////////////////////////////
+
+
+	$expirate=0;
+	$msg='<table border="0"><tr><td width="200"><marquee behavior=alternate><font size="+2">ATENTIE !!!</font></marquee></td></tr></table><br /> Va rugam sa actualizati reviziile la urmatoarii angajati: ';
+
+	include "conexiune.php";
+	$sql=mysql_query("SELECT avize_soferi.id_sofer, avize_soferi.exp, soferi.nume
+						FROM avize_soferi
+						INNER JOIN soferi on avize_soferi.id_sofer = soferi.indice
+						WHERE 1");
+
+	while ($row=mysql_fetch_array($sql)) {
+
+		$id_sofer=$row["id_sofer"];
+		$nume = $row["nume"];
+		$exp=$row["exp"];
+
+		if ($exp==1)
+		{
+			if ($expirate==1)
+			{
+				$msg=$msg.', ';
+			}
+			$msg=$msg.'<a href="avize_soferi.php?indice='.$id_sofer.'&trim=index.php"><font color="#0000ff">'.$nume.'</font></a>';
+			$expirate=1;
 		}
+	}
+	if ($expirate==1)
+	{
+		echo '<table border="1" cellspacing="0" cellpadding="1"><tr><td>';
+		echo '<font color="#ff0000" size="+1">'.$msg.'.</font>';
+		echo '</td></tr></table>';
+	}
+
+
+
+
 }
  else {
 	echo 'Nu sunteti logat!<br>';

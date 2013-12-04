@@ -120,8 +120,9 @@ if ($_SESSION['user']==1){
 	//************************
 	//MASINI
 	//************************
-	$expirate=0;
-	$msg='<table border="0"><tr><td width="200"><marquee behavior=alternate><font size="+2">ATENTIE !!!</font></marquee></td></tr></table><br /> Va rugam sa actualizati reviziile la urmatoarele masini: ';
+	$expirate_masini=0;
+	$atentie = '<table border="0"><tr><td width="200"><marquee behavior=alternate><font size="+2">ATENTIE !!!</font></marquee></td></tr></table>';
+	$msg_masini='<br /> Va rugam sa actualizati reviziile la urmatoarele masini: ';
 
 	include "conexiune.php";
 	$sql=mysql_query("SELECT * FROM revizii ");
@@ -141,27 +142,28 @@ if ($_SESSION['user']==1){
 
 					$exp=$row["exp"];
 					if ($exp==1)
-						{if ($expirate==1){$msg=$msg.', ';}
-						$msg=$msg.'<a href="revizii.php?indice='.$id_masina.'&trim=index.php"><font color="#0000ff">'.$nr_inmatric.'</font></a>';
-						$expirate=1;
+						{if ($expirate_masini==1){$msg_masini=$msg_masini.', ';}
+						$msg_masini=$msg_masini.'<a href="revizii.php?indice='.$id_masina.'&trim=index.php"><font color="#0000ff">'.$nr_inmatric.'</font></a>';
+						$expirate_masini=1;
 						}
 					}
-	if ($expirate==1)
-	{
-		echo '<table border="1" cellspacing="0" cellpadding="1"><tr><td>';
-		echo '<font color="#ff0000" size="+1">'.$msg.'.</font>';
-		echo '</td></tr></table>';
-	}
+	// if ($expirate_masini==1)
+	// {
+	// 	echo $atentie;
+	// 	echo '<table border="1" cellspacing="0" cellpadding="1"><tr><td>';
+	// 	echo '<font color="#ff0000" size="+1">'.$msg_masini.'.</font>';
+	// 	echo '</td></tr></table>';
+	// }
 
-	echo "<br /><br />";
+	//echo "<br /><br />";
 
 	/////////////////////////////////
 	//SOFERI
 	/////////////////////////////////
 
 
-	$expirate=0;
-	$msg='<table border="0"><tr><td width="200"><marquee behavior=alternate><font size="+2">ATENTIE !!!</font></marquee></td></tr></table><br /> Va rugam sa actualizati reviziile la urmatoarii angajati: ';
+	$expirate_soferi=0;
+	$msg_soferi='<br /> Va rugam sa actualizati reviziile la urmatoarii angajati: ';
 
 	include "conexiune.php";
 	$sql=mysql_query("SELECT avize_soferi.id_sofer, avize_soferi.exp, soferi.nume
@@ -177,20 +179,40 @@ if ($_SESSION['user']==1){
 
 		if ($exp==1)
 		{
-			if ($expirate==1)
+			if ($expirate_soferi==1)
 			{
-				$msg=$msg.', ';
+				$msg_soferi=$msg_soferi.', ';
 			}
-			$msg=$msg.'<a href="avize_soferi.php?indice='.$id_sofer.'&trim=index.php"><font color="#0000ff">'.$nume.'</font></a>';
-			$expirate=1;
+			$msg_soferi=$msg_soferi.'<a href="avize_soferi.php?indice='.$id_sofer.'&trim=index.php"><font color="#0000ff">'.$nume.'</font></a>';
+			$expirate_soferi=1;
 		}
 	}
-	if ($expirate==1)
+	// if ($expirate_soferi==1)
+	// {
+	// 	if ($expirate == 0 ) { echo $atentie; }
+	// 	echo '<table border="1" cellspacing="0" cellpadding="1"><tr><td>';
+	// 	echo '<font color="#ff0000" size="+1">'.$msg_soferi.'.</font>';
+	// 	echo '</td></tr></table>';
+	// }
+
+	if ($expirate_masini == 1 || $expirate_soferi == 1)
 	{
 		echo '<table border="1" cellspacing="0" cellpadding="1"><tr><td>';
-		echo '<font color="#ff0000" size="+1">'.$msg.'.</font>';
+		echo $atentie;
+
+		if ($expirate_masini == 1) {
+			echo '<font color="#ff0000" size="+1">'.$msg_masini.'.</font>';
+		}
+		echo '<br /	>';
+
+		if ($expirate_soferi == 1) {
+			echo '<font color="#ff0000" size="+1">'.$msg_soferi.'.</font>';
+		}
 		echo '</td></tr></table>';
+
 	}
+
+
 
 
 

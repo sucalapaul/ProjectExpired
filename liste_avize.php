@@ -42,21 +42,14 @@ session_start();
 <?php
 if ($_SESSION['user']==1){
 
-	// include "conexiune.php";
-	// $sql=mysql_query("SELECT * FROM revizii");
-	// $randuri=0;
-	// while ($row=mysql_fetch_row($sql)){ 
-	// 	$randuri=$randuri+1; 
-	// }
-	// mysql_close($conexiune);
-
 
 	require "perioade_notificari.php";
 	include "conexiune.php";
 	$sql=mysql_query("SELECT *
 						FROM avize_soferi
 						INNER JOIN soferi on avize_soferi.id_sofer = soferi.indice
-						WHERE 1");
+						WHERE 1
+						ORDER BY nume");
 	echo '<table border=1 cellpadding="1" cellspacing="0">';
 	echo '<thead><tr>
 		<td align="center"><b> Nr </b></td>
@@ -163,7 +156,7 @@ if ($_SESSION['user']==1){
 
 
 			echo '<td align="center" class="'.( $expira_ci ? 'expired':'' ).'" >';
-			echo $ci_serie."".$ci_numar;
+			echo $ci_serie."-".$ci_numar;
 			echo '</td>';	
 
 
@@ -209,76 +202,6 @@ if ($_SESSION['user']==1){
 			echo '<td align="center" class="'.( $expira_legitimatie ? 'expired':'' ).'" >';
 			echo $legitimatie_exp;
 			echo '</td>';	
-
-
-
-			// echo '<td id="field_0_'.$i.'" align="center" value="'.$nr_inmatric.'" >';
-			// echo $nr_inmatric;
-			// echo '</td>';
-			// echo '<td id="field_1_'.$i.'" align="center" value="'.$exp_itp.'" >';
-			// 	if (($d1-$dataazi_sec)<=864000)
-			// 	{$expira=1;
-			// 	echo "<font color='#ff0000'>";
-			// 	}	
-			// echo $exp_itp;
-			// if ($expira==1){echo '</font>';}
-			// echo '</td>';
-			// echo '<td id="field_2_'.$i.'" align="center" value="'.$exp_tah.'" >';
-			// 	if (($d2-$dataazi_sec)<=864000)
-			// 	{$expira=1;
-			// 	echo "<font color='#ff0000'>";
-			// 	}	
-			// echo $exp_tah;
-			// if ($expira==1){echo '</font>';}
-			// echo '</td>';
-			// echo '<td id="field_3_'.$i.'" align="center" value="'.$exp_cls.'" >';
-			// 	if (($d3-$dataazi_sec)<=864000)
-			// 	{$expira=1;
-			// 	echo "<font color='#ff0000'>";
-			// 	}	
-			// echo $exp_cls;
-			// if ($expira==1){echo '</font>';}
-			// echo '</td>';
-			// echo '<td id="field_4_'.$i.'" align="center" value="'.$exp_rca.'" >';
-			// 	if (($d4-$dataazi_sec)<=864000)
-			// 	{$expira=1;
-			// 	echo "<font color='#ff0000'>";
-			// 	}	
-			// echo $exp_rca;
-			// if ($expira==1){echo '</font>';}
-			// echo '</td>';
-			// echo '<td id="field_5_'.$i.'" align="center" value="'.$exp_cas.'" >';
-			// 	if (($d5-$dataazi_sec)<=864000)
-			// 	{$expira=1;
-			// 	echo "<font color='#ff0000'>";
-			// 	}	
-			// echo $exp_cas;
-			// if ($expira==1){echo '</font>';}
-			// echo '</td>';
-			// echo '<td id="field_6_'.$i.'" align="center" value="'.$exp_lic.'" >';
-			// 	if (($d6-$dataazi_sec)<=864000)
-			// 	{$expira=1;
-			// 	echo "<font color='#ff0000'>";
-			// 	}	
-			// echo $exp_lic;
-			// if ($expira==1){echo '</font>';}
-			// echo '</td>';
-			// echo '<td id="field_7_'.$i.'" align="center" value="'.$exp_itpi.'" >';
-			// 	if (($d7-$dataazi_sec)<=864000)
-			// 	{$expira=1;
-			// 	echo "<font color='#ff0000'>";
-			// 	}	
-			// echo $exp_itpi;
-			// if ($expira==1){echo '</font>';}
-			// echo '</td>';
-			// echo '<td id="field_8_'.$i.'" align="left" ';
-			// echo ' value="'.$seria_casco.'" >'.$seria_casco.'</td>';
-			// echo '<td id="field_9_'.$i.'" align="left" ';
-			// echo ' value="'.$societatea.'" >'.$societatea.'</td>';
-			
-			// echo '<td id="field_10_'.$i.'" align="left" ';
-			// echo ' value="'.$leasing.'" >'.$leasing.'</td>';			
-
 
 			echo '
 			';

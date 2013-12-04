@@ -99,6 +99,7 @@ aI("text=pe masini;url=liste_masini.php;");
 aI("text=prestatii;url=prestatii.php;");
 aI("text=revizii;url=liste_revizii.php;");
 aI("text=revizii camioane;url=liste_revizii_c.php;");
+aI("text=avize soferi;url=liste_avize.php;");
 aI("image=transparent.gif;imageheight=4;rawcss=border:1px solid #c0c0c0;type=header;");
 }
 drawMenus();
